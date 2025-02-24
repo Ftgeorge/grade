@@ -14,6 +14,10 @@ export default {
       fontFamily: {
         montserrat: ["var(--font-montserrat-alternates)"],
       },
+      backgroundImage: {
+        hero: "url('/images/hero.jpg')",
+        howitworks: "url('/images/howitworks.jpg')",
+      }
     },
   },
   plugins: [],

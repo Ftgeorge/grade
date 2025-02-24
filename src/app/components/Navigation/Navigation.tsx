@@ -52,7 +52,7 @@ export default function Header() {
     }, []);
 
     return (
-        <header className="bg-backgroundColor border-gray-200 fixed top-0 z-50 w-full">
+        <header className="bg-white border-gray-200 fixed top-0 z-50 w-full">
             <nav className="flex items-center justify-between p-4 px-6 md:px-10 lg:px-10 xl:px-20 2xl:px-20">
                 {/* Logo */}
                 <Link href="/" className="">
