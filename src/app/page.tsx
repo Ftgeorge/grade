@@ -4,6 +4,7 @@ import HomePage from "./pages/home/home";
 import Features from "./pages/features/features";
 import HowItWorks from "./pages/how-it-works/how-it-works";
 import WhyChooseUs from "./pages/why-choose-us/whychooseus";
+import Testimonials from "./pages/testimonials/testimonials";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
     <Features/>
     <HowItWorks/>
     <WhyChooseUs/>
+    <Testimonials/>
     </>
   );
 }

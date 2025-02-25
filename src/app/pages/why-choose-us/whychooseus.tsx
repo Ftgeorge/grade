@@ -38,10 +38,12 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="bg-white py-16 px-6">
-      <div className="max-w-7xl mx-auto">
-        <HeaderText placeholder="Why Choose Us" className="text-center mb-4" />
-        <SubHeaderText placeholder="Discover why Grade stands out as the most advanced and reliable AI-powered exam monitoring system." className="text-center mb-12" />
+    <section className="bg-white h-screen flex flex-col items-center justify-center px-6">
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-16">
+        <div className='flex flex-col items-center gap-4'>
+          <HeaderText placeholder="Why Choose Us" className="text-center" />
+          <SubHeaderText placeholder="Discover why Grade stands out as the most advanced and reliable AI-powered exam monitoring system." className="text-center" />
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {features.map((feature, index) => (
@@ -52,7 +54,7 @@ export default function WhyChooseUs() {
             </div>
           ))}
         </div>
-        <PrimaryButton placeholder="Start Your Free Trial" className="text-white text-lg font-semibold py-4 px-8 rounded-full hover:bg-blue-600 transition duration-300" />
+        <PrimaryButton primary={true} placeholder="Start Your Free Trial" className="text-white text-lg font-semibold py-4 px-8 rounded-full hover:bg-blue-600 transition duration-300" />
       </div>
     </section>
   );

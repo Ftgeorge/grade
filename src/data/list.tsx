@@ -4,6 +4,7 @@ export interface CTAButtonProps {
 
 export interface PrimaryButtonProps {
     placeholder: React.ReactNode;
+    className: string;
     primary: boolean;
 }
 
