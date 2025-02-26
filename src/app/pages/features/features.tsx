@@ -1,7 +1,9 @@
+"use client";
 
 import HeaderText from "@/app/components/Text/HeaderText";
 import SubHeaderText from "@/app/components/Text/SubHeaderText";
 import { FaMicrophone, FaUser, FaChartLine, FaVideo, FaLock, FaEye } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Features() {
     const features = [
@@ -40,14 +42,16 @@ export default function Features() {
     return (
         <section className="bg-white h-screen px-20 flex items-center justify-center">
             <div className="max-w-7xl mx-auto flex flex-col items-center">
-                <div className="w-full flex flex-col items-center w-9/12 gap-6">
+
+                <div className="w-full flex flex-col items-center w-8/12 gap-6" >
                     <HeaderText placeholder="Key Features" className="text-center" />
                     <SubHeaderText placeholder="Explore the advanced capabilities of our AI-powered examination monitoring system, ensuring integrity and seamless oversight." className="2xl:text-center" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
                     {features.map((feature, index) => (
-                        <div key={index} className="flex items-start space-x-4 p-6 rounded-2xl shadow-md bg-white">
+                        <div key={index}
+                            className="flex items-start space-x-4 p-6 rounded-2xl shadow-md bg-white" >
                             <feature.icon className="w-12 h-12 text-primary" />
                             <div>
                                 <h3 className="text-2xl font-semibold text-black font-montserrat mb-2">{feature.title}</h3>
@@ -56,6 +60,7 @@ export default function Features() {
                         </div>
                     ))}
                 </div>
+
             </div>
         </section>
     );

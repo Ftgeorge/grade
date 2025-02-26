@@ -1,9 +1,9 @@
 import HeaderText from '../../components/Text/HeaderText';
 import SubHeaderText from '../../components/Text/SubHeaderText';
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
-import SecondaryButton from '@/app/components/Buttons/SecondaryButton';
+import SecondaryButton from '../../components/Buttons/SecondaryButton';
 import { MdOutlineArrowForward } from 'react-icons/md';
-
+import { motion } from 'framer-motion';
 export default function Testimonials() {
     const testimonials = [
         {
@@ -29,7 +29,7 @@ export default function Testimonials() {
     return (
         <section className="bg-howitworks h-screen bg-cover flex flex-col items-center justify-center px-6 relative font-montserrat">
             <div className="absolute inset-0 bg-primary opacity-80"></div>
-            <div className="max-w-6xl flex flex-col relative gap-10 mt-10">
+            <div className="max-w-6xl flex flex-col relative gap-10">
                 <div className='w-full flex flex-col items-center gap-2'>
                     <HeaderText placeholder="What Our Users Say" className="text-white text-center text-center" />
                     <SubHeaderText placeholder="Hear from institutions and professionals who trust Grade to deliver secure and reliable examination monitoring." className="text-center text-white" />
