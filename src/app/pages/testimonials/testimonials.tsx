@@ -1,9 +1,9 @@
 import HeaderText from '../../components/Text/HeaderText';
 import SubHeaderText from '../../components/Text/SubHeaderText';
-import PrimaryButton from '../../components/Buttons/PrimaryButton';
 import SecondaryButton from '../../components/Buttons/SecondaryButton';
 import { MdOutlineArrowForward } from 'react-icons/md';
 import { motion } from 'framer-motion';
+
 export default function Testimonials() {
     const testimonials = [
         {
@@ -27,28 +27,35 @@ export default function Testimonials() {
     ];
 
     return (
-        <section className="bg-howitworks h-screen bg-cover flex flex-col items-center justify-center px-6 relative font-montserrat">
+        <section className="bg-howitworks min-h-screen bg-cover flex flex-col items-center justify-center px-4 sm:px-6 lg:px-12 py-12 relative font-montserrat">
             <div className="absolute inset-0 bg-primary opacity-80"></div>
-            <div className="max-w-6xl flex flex-col relative gap-10">
-                <div className='w-full flex flex-col items-center gap-2'>
-                    <HeaderText placeholder="What Our Users Say" className="text-white text-center text-center" />
+
+            <div className="max-w-7xl flex flex-col relative gap-10">
+                <div className='w-full flex flex-col items-center gap-4'>
+                    <HeaderText placeholder="What Our Users Say" className="text-white text-center" />
                     <SubHeaderText placeholder="Hear from institutions and professionals who trust Grade to deliver secure and reliable examination monitoring." className="text-center text-white" />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {testimonials.map((testimonial, index) => (
-                        <div key={index} className="flex flex-col items-center text-center bg-white/10 p-8 rounded-3xl shadow-lg">
-                            <img src={testimonial.image} alt={testimonial.name} className="w-24 h-24 rounded-full mb-6 object-cover" />
-                            <h3 className="text-2xl font-semibold text-white mb-2">{testimonial.name}</h3>
-                            <p className="text-sm text-white mb-4">{testimonial.role}</p>
-                            <p className="text-white text-lg">"{testimonial.message}"</p>
+                        <div 
+                            key={index} 
+                            className="flex flex-col items-center text-center bg-white/10 p-6 sm:p-8 rounded-3xl shadow-lg"
+                        >
+                            <img 
+                                src={testimonial.image} 
+                                alt={testimonial.name} 
+                                className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 sm:mb-6 object-cover" 
+                            />
+                            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">{testimonial.name}</h3>
+                            <p className="text-sm sm:text-base text-white mb-4">{testimonial.role}</p>
+                            <p className="text-white text-sm sm:text-lg">"{testimonial.message}"</p>
                         </div>
                     ))}
                 </div>
 
                 <div className="text-center w-full flex items-center justify-center">
-                    <SecondaryButton
-                        placeholder="Start Your Free Trial"
-                        primary={false}>
+                    <SecondaryButton placeholder="Start Your Free Trial" primary={false}>
                         <MdOutlineArrowForward className="text-base" />
                     </SecondaryButton>
                 </div>

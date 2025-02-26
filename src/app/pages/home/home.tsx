@@ -25,7 +25,7 @@ export default function HomePage() {
                     <div >
                         <SubHeaderText
                             placeholder="AI-powered examination monitoring with real-time face and voice recognition to detect and prevent malpractice."
-                            className="text-center md:text-center lg:text-center xl:text-center 2xl:text-center text-brown-900"
+                            className="text-center md:text-center lg:text-center xl:text-center 2xl:text-center text-black"
                         />
                     </div>
 

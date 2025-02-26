@@ -2,7 +2,7 @@ import PrimaryButton from '@/app/components/Buttons/PrimaryButton';
 import HeaderText from '@/app/components/Text/HeaderText';
 import SubHeaderText from '@/app/components/Text/SubHeaderText';
 import { AiOutlineRobot, AiOutlineSafety, AiOutlineAppstoreAdd, AiOutlineFileText, AiOutlineExpand, AiOutlineLink } from 'react-icons/ai';
-import { motion } from 'framer-motion'; // ✅ Corrected import
+import { motion } from 'framer-motion';
 
 export default function WhyChooseUs() {
   const features = [
@@ -39,20 +39,25 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="bg-white h-screen flex flex-col items-center justify-center px-6">
-      <div className="max-w-7xl mx-auto flex flex-col items-center gap-16">
-        <div className='flex flex-col items-center gap-4'
-        >
+    <section className="bg-white min-h-screen px-4 sm:px-8 md:px-10 lg:px-16 xl:px-20 2xl:px-32 py-12 flex items-center justify-center">
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 lg:gap-16">
+
+        {/* Header Section */}
+        <div className='flex flex-col items-center text-center gap-4'>
           <HeaderText placeholder="Why Choose Us" className="text-center" />
           <SubHeaderText placeholder="Discover why Grade stands out as the most advanced and reliable AI-powered exam monitoring system." className="text-center" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="flex flex-col items-center text-center" >
-              <div className="text-primary text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-2xl font-semibold text-primary mb-4">{feature.title}</h3>
-              <p className="text-gray-600 text-lg">{feature.description}</p>
+            <div
+              key={index}
+              className="flex flex-col items-center text-center p-6 rounded-xl shadow-lg bg-gray-50 hover:bg-white transition"
+            >
+              <div className="text-primary text-5xl mb-4">{feature.icon}</div>
+              <h3 className="text-lg lg:text-base xl:text-xl 2xl:text-xl font-semibold text-primary mb-2">{feature.title}</h3>
+              <p className="text-gray-800 text-sm lg:text-sm xl:text-base 2xl:text-base">{feature.description}</p>
             </div>
           ))}
         </div>
