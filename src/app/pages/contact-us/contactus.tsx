@@ -4,20 +4,20 @@ import { socialIcons } from "@/data/array";
 
 export default function ContactUs() {
     return (
-        <section className="bg-white py-4 px-6" id="contact-us">
-            <div className="max-w-7xl mx-auto flex flex-col gap-10">
-                <div className="w-full flex flex-col gap-2 items-center">
-                    <HeaderText placeholder="Contact Us" className="text-center text-primary" />
+        <section className="bg-white py-8 px-4 sm:px-6 lg:px-8" id="contact-us">
+            <div className="max-w-7xl mx-auto flex flex-col gap-16">
+                <div className="w-full flex flex-col gap-4 items-center text-center">
+                    <HeaderText placeholder="Contact Us" className="text-primary" />
                     <SubHeaderText placeholder="Have questions or want to learn more? We’re here to help." />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 font-montserrat">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 font-montserrat">
                     {/* Contact Information */}
                     <div>
-                        <h3 className="text-2xl font-semibold text-primary mb-4">Get in Touch</h3>
-                        <p className="text-black mb-4">Reach out to us through any of the following channels:</p>
+                        <h3 className="text-2xl font-semibold text-primary mb-6">Get in Touch</h3>
+                        <p className="text-black mb-6">Reach out to us through any of the following channels:</p>
 
-                        <div className="space-y-4">
+                        <div className="space-y-6">
                             <p className="text-lg"><strong>Email:</strong> support@gradeai.com</p>
                             <p className="text-lg"><strong>Phone:</strong> +1 (555) 123-4567</p>
                             <p className="text-lg"><strong>Office Address:</strong> 123 Innovation Drive, Tech City, TX 75001</p>
@@ -27,10 +27,10 @@ export default function ContactUs() {
                             <p>Saturday & Sunday: Closed</p>
 
                             <h4 className="text-xl font-semibold text-primary mt-8">Follow Us</h4>
-                            <div className="flex mt-4 md:mt-0 space-x-5 rtl:space-x-reverse">
+                            <div className="flex flex-wrap mt-4 space-x-5 rtl:space-x-reverse">
                                 {socialIcons.map(({ icon: Icon, label, href }, index) => (
                                     <a key={index} href={href} className="text-gray-400 hover:text-primary">
-                                        <Icon className="text-xl" />
+                                        <Icon className="text-2xl" />
                                         <span className="sr-only">{label}</span>
                                     </a>
                                 ))}
@@ -40,8 +40,8 @@ export default function ContactUs() {
 
                     {/* Contact Form */}
                     <div>
-                        <h3 className="text-2xl font-semibold text-primary mb-4">Send Us a Message</h3>
-                        <form className="space-y-6">
+                        <h3 className="text-2xl font-semibold text-primary mb-6">Send Us a Message</h3>
+                        <form className="space-y-8">
                             <div>
                                 <label htmlFor="name" className="block text-lg font-medium text-gray-700">Full Name</label>
                                 <input
