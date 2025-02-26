@@ -14,7 +14,7 @@ export default function HomePage() {
 
             {/* Content Section */}
             <div className="relative flex justify-center items-center h-full">
-                <div className="w-5/12 flex flex-col gap-6 justify-center items-center">
+                <div className="w-11/12 md:w-8/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 flex flex-col gap-6 justify-center items-center">
 
                     {/* Main Header */}
                     <div>
@@ -25,7 +25,7 @@ export default function HomePage() {
                     <div >
                         <SubHeaderText
                             placeholder="AI-powered examination monitoring with real-time face and voice recognition to detect and prevent malpractice."
-                            className="2xl:text-center text-brown-900"
+                            className="text-center md:text-center lg:text-center xl:text-center 2xl:text-center text-brown-900"
                         />
                     </div>
 
