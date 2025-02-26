@@ -94,7 +94,7 @@ export default function Header() {
 
                 {/* Mobile Menu */}
                 {isMobileMenuOpen && (
-                    <div className="absolute top-16 left-0 w-full bg-backgroundColor shadow-lg flex flex-col items-center space-y-6 p-6 md:hidden">
+                    <div className="absolute top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 p-6 md:hidden">
                         {NavigationContent.map((content, index) => (
                             <button
                                 key={index}
