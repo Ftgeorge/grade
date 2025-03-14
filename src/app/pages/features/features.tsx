@@ -39,6 +39,15 @@ export default function Features() {
         }
     ];
 
+    const cardVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: (index: number) => ({
+            opacity: 1,
+            y: 0,
+            transition: { delay: index * 0.2, duration: 0.8 }
+        })
+    };
+
     return (
         <section className="bg-white max-h-fit md:h-screen lg:h-screen xl:h-screen 2xl:h-screen px-4 md:px-10 lg:px-10 xl:px-20 2xl:px-20 py-12 md:py-0 lg:py-32 xl:py-32 2xl:py-40 2xl:px-0 flex items-center justify-center">
             <div className="max-w-7xl mx-auto flex flex-col items-center">
@@ -48,19 +57,22 @@ export default function Features() {
                     <SubHeaderText placeholder="Explore the advanced capabilities of our AI-powered examination monitoring system, ensuring integrity and seamless oversight." className="text-center md:text-center lg:text-center xl:text-center 2xl:text-center" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 md:mt-12 lg:mt-8 xl:mt-12 2xl:mt-12">
+                {/* Features Section */}
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20"
+                >
                     {features.map((feature, index) => (
-                        <div key={index}
-                            className="flex items-start space-x-4 p-6 rounded-2xl shadow-md bg-white" >
+                        <motion.div key={index} custom={index} variants={cardVariants} className="flex items-start space-x-4 p-6 rounded-2xl shadow-md bg-white">
                             <feature.icon className="w-12 h-12 text-primary" />
                             <div>
-                                <h3 className="text-base md:text-base lg:text-base xl:text-xl 2xl:text-2xl font-semibold text-black font-montserrat mb-2">{feature.title}</h3>
-                                <p className="text-gray-800 text-sm md:text-sm lg:text-sm xl:text-base 2xl:text-base font-montserrat">{feature.description}</p>
+                                <h3 className="text-xl font-semibold text-black mb-2">{feature.title}</h3>
+                                <p className="text-gray-800">{feature.description}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
-
+                </motion.div>
             </div>
         </section>
     );

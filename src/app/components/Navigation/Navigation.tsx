@@ -16,7 +16,7 @@ export default function Header() {
         { title: "Features", link: "#features" },
         { title: "How It Works", link: "#howitworks" },
         { title: "Why Choose Us", link: "#whychooseus" },
-        { title: "Testimonials", link: "#testimonials" },
+        // { title: "Testimonials", link: "#testimonials" },
         { title: "Contact Us", link: "#contactus" },
     ];
 

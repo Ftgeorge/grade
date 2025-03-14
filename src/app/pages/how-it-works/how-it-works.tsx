@@ -36,38 +36,63 @@ export default function HowItWorks() {
         }
     ];
 
+    const cardVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: (index: number) => ({
+            opacity: 1,
+            y: 0,
+            transition: { delay: index * 0.2, duration: 0.8 }
+        })
+    };
+
+    const buttonVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { delay: steps.length * 0.2 + 0.5, duration: 0.8 } }
+    };
+
     return (
         <section className="bg-howitworks min-h-screen bg-cover relative font-montserrat">
             <div className="absolute inset-0 bg-primary opacity-80"></div>
             <div className="w-full min-h-screen flex flex-col justify-start items-center px-4 sm:px-8 md:px-12 lg:px-16">
                 <div className="max-w-3xl md:max-w-6xl flex flex-col relative gap-10 mt-10">
 
-                    {/* Header and SubHeader Animation */}
+                    {/* Header and SubHeader */}
                     <div className="text-center flex flex-col gap-2">
                         <HeaderText placeholder="How It Works" className="text-white" />
                         <SubHeaderText placeholder="Discover how our AI-powered system ensures exam integrity through advanced monitoring." className="text-white" />
                     </div>
 
                     {/* Steps with Staggered Animation */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <motion.div 
+                        initial="hidden" 
+                        animate="visible" 
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+                    >
                         {steps.map((step, index) => (
-                            <div
+                            <motion.div
                                 key={index}
+                                custom={index}
+                                variants={cardVariants}
                                 className="flex flex-col items-center text-center p-4 rounded-2xl bg-white/10"
                             >
                                 <step.icon className="w-12 h-12 mb-4 text-white" />
                                 <h3 className="text-lg md:text-xl font-semibold text-white mb-4">{step.title}</h3>
                                 <p className="text-white/80 text-sm md:text-base">{step.description}</p>
-                            </div>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
 
-                    {/* Button with Hover Animation */}
-                    <div className="text-center w-full flex items-center justify-center mt-8">
+                    {/* Button with Animation */}
+                    <motion.div 
+                        initial="hidden" 
+                        animate="visible" 
+                        variants={buttonVariants} 
+                        className="text-center w-full flex items-center justify-center mt-8"
+                    >
                         <SecondaryButton placeholder="Start Your Free Trial" primary={false}>
                             <MdOutlineArrowForward className="text-base" />
                         </SecondaryButton>
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>
